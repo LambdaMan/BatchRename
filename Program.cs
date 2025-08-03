@@ -95,8 +95,16 @@ namespace BatchRename
 					if(!opts.Preview)
 					{
 						File.Move(sourceFilePath, targetFilePath);
+						Console.WriteLine($"Moved\t{sourceFilePath}\nTo\t{targetFilePath}");
 					}
-					Console.WriteLine($"Moved {sourceFilePath} --> {targetFilePath}");
+					else
+					{
+						Console.WriteLine($"Preview\t{sourceFilePath}\n------>\t{targetFilePath}");
+					}
+				}
+				else
+				{
+					Console.WriteLine($"No change for filepath {sourceFilePath}");
 				}
 			}
 		}
